@@ -30,8 +30,8 @@ func main() {
 	// Gallery page
 	http.HandleFunc("/gallery", func(w http.ResponseWriter, r *http.Request) {
 		photos := []string{
-			"/static/images/photo1.webp",
-			"/static/images/photo2.webp",
+			"templates/static/images/photo1.webp",
+			"templates/static/images/photo2.webp",
 		}
 		renderTemplate(w, "gallery.html", photos)
 	})
