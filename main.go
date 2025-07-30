@@ -9,8 +9,9 @@ import (
 )
 
 func main() {
-	// Serve static files (CSS, JS, Images)
-	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	// Serve static files from public/css, public/js, public/images
+	fs := http.FileServer(http.Dir("public"))
+	http.Handle("/public/", http.StripPrefix("/public/", fs))
 
 	// Home page
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
@@ -30,8 +31,8 @@ func main() {
 	// Gallery page
 	http.HandleFunc("/gallery", func(w http.ResponseWriter, r *http.Request) {
 		photos := []string{
-			"templates/static/images/photo1.webp",
-			"templates/static/images/photo2.webp",
+			"/public/images/photo1.webp",
+			"/public/images/photo2.webp",
 		}
 		renderTemplate(w, "gallery.html", photos)
 	})
@@ -61,6 +62,9 @@ func main() {
 
 // Helper function to render templates
 func renderTemplate(w http.ResponseWriter, tmpl string, data interface{}) {
-	t := template.Must(template.ParseFiles("templates/"+tmpl, "templates/header.html", "templates/footer.html"))
+	t := template.Must(template.ParseFiles(
+		"public/"+tmpl,
+		"public/header.html",
+		"public/footer.html"))
 	t.Execute(w, data)
 }
