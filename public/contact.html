@@ -3,38 +3,50 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Contact - Amit Photography</title>
+    <title>Contact - Gallery House</title>
     <link rel="stylesheet" href="./css/style.css">
+    <!-- AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+
+
 </head>
 
 <body>
-<header>
-    <h1>Amit Photography</h1>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/services">Services</a>
-        <a href="/gallery">Gallery</a>
-        <a href="/contact">Contact</a>
-    </nav>
-</header>
+    <header>
+        <h1>Gallery House</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/contact">Contact</a>
+            <button id="theme-toggle">🌙</button>
+        </nav>
+    </header>
 
-    <section>
-        <h2>Contact Me</h2>
-        <form method="POST" action="/contact">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        {{if eq . "success"}}
-        <p style="color: green;">Message sent successfully!</p>
-        {{end}}
-    </section>
+    <main>
+        <section>
+            <h2 data-aos="fade-down">Contact Me</h2>
+            <form method="POST" action="/contact" data-aos="fade-up">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
 
     <footer>
-    <p>© 2025 Amit Photography | All Rights Reserved</p>
-</footer>
+        <p>© 2025 Gallery House | All Rights Reserved</p>
+    </footer>
+    <!-- Back to Top Button -->
+    <button id="back-to-top">↑</button>
+    <!-- JS Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>

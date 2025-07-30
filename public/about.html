@@ -3,30 +3,45 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>About - Amit Photography</title>
+    <title>About - Gallery House</title>
     <link rel="stylesheet" href="./css/style.css">
+    <!-- AOS CSS -->
+    <!-- AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-<header>
-    <h1>Amit Photography</h1>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/services">Services</a>
-        <a href="/gallery">Gallery</a>
-        <a href="/contact">Contact</a>
-    </nav>
-</header>
-
-    <section>
-        <h2>About Me</h2>
-        <p>I am a passionate photographer with 5+ years of experience in portraits and nature photography.</p>
-    </section>
-
+    <header>
+        <h1>Gallery House</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/contact">Contact</a>
+            <button id="theme-toggle">🌙</button>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2 data-aos="fade-down">About Me</h2>
+            <p data-aos="fade-left">Hi, I'm Amit, a passionate photographer specializing in portraits, events, and
+                landscapes.</p>
+            <img src="/images/photo3.jpg" alt="About Me" data-aos="flip-right">
+        </section>
+    </main>
     <footer>
-    <p>© 2025 Amit Photography | All Rights Reserved</p>
-</footer>
+        <p>© 2025 Gallery House | All Rights Reserved</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top">↑</button>
+    <!-- JS Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="/js/main.js"></script>
+
 </body>
 
 </html>

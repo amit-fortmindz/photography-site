@@ -3,31 +3,43 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Home - Amit Photography</title>
+    <title>Home - Gallery House</title>
     <link rel="stylesheet" href="./css/style.css">
+    <!-- AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+
+
 </head>
 
 <body>
     <header>
-        <h1>Amit Photography</h1>
+        <h1>Gallery House</h1>
         <nav>
             <a href="/">Home</a>
             <a href="/about">About</a>
             <a href="/services">Services</a>
             <a href="/gallery">Gallery</a>
             <a href="/contact">Contact</a>
+            <button id="theme-toggle">🌙</button>
         </nav>
     </header>
-
-    <section>
-        <h2>Welcome to My Photography Website</h2>
-        <p>Capturing moments that last forever.</p>
-        <img src="./images/photo1.jpg" alt="Sample Photo">
-    </section>
-
+    <main>
+        <section>
+            <h2 data-aos="fade-up">Welcome to My Photography Website</h2>
+            <p data-aos="fade-right">Capturing moments that last forever.</p>
+            <img src="/images/photo1.jpg" alt="Sample Photo" data-aos="zoom-in">
+        </section>
+    </main>
     <footer>
-    <p>© 2025 Amit Photography | All Rights Reserved</p>
-</footer>
+        <p>© 2025 Gallery House | All Rights Reserved</p>
+    </footer>
+    <!-- Back to Top Button -->
+    <button id="back-to-top">↑</button>
+    <!-- JS Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>

@@ -34,8 +34,8 @@ func main() {
 
 	http.HandleFunc("/gallery", func(w http.ResponseWriter, r *http.Request) {
 		photos := []string{
-			"./images/photo1.webp",
-			"./images/photo2.webp",
+			"./images/photo1.jpg",
+			"./images/photo2.jpg",
 		}
 		renderTemplate(w, "gallery.html", photos)
 	})
