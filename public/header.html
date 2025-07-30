@@ -10,26 +10,3 @@
     </nav>
 </header>
 {{end}}
-
-{{template "header" .}}
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <title>{{.Title}} - Amit Photography</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-
-<body>
-    {{template "header" .}}
-    <section>
-        <h2>{{.Heading}}</h2>
-        <p>{{.Content}}</p>
-        {{if .Image}}
-        <img src="{{.Image}}" alt="Sample Photo">
-        {{end}}
-    </section>
-</body>
-
-</html>
