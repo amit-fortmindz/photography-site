@@ -64,8 +64,9 @@ func main() {
 // Helper function to render templates
 func renderTemplate(w http.ResponseWriter, tmpl string, data interface{}) {
 	t := template.Must(template.ParseFiles(
-		"public/"+tmpl,
-		"public/header.html",
-		"public/footer.html"))
+		"public/" + tmpl,
+	// "public/header.html",
+	// "public/footer.html",
+	))
 	t.Execute(w, data)
 }
