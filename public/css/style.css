@@ -223,3 +223,37 @@ body.dark-mode #back-to-top {
 body.dark-mode #back-to-top:hover {
     background: #ff9800;
 }
+
+/* Theme Toggle Button */
+#theme-toggle {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+#theme-toggle:hover {
+    background: #ff9800;
+    border-color: #ff9800;
+    color: #fff;
+}
+
+/* Dark Mode Button Styling */
+body.dark-mode #theme-toggle {
+    border: 2px solid #f0f0f0;
+    color: #f0f0f0;
+    background: transparent;
+}
+
+body.dark-mode #theme-toggle:hover {
+    background: #ff9800;
+    border-color: #ff9800;
+    color: #fff;
+}
