@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery - Amit Photography</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    {{template "header" .}}
+
+    <section>
+        <h2>Gallery</h2>
+        <div class="gallery">
+            {{range .}}
+            <img src="{{.}}" alt="Gallery Photo">
+            {{end}}
+        </div>
+    </section>
+
+    {{template "footer" .}}
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+{{define "header"}}
+<header>
+    <h1>Amit Photography</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/contact">Contact</a>
+    </nav>
+</header>
+{{end}}
+
+{{template "header" .}}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{.Title}} - Amit Photography</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    {{template "header" .}}
+    <section>
+        <h2>{{.Heading}}</h2>
+        <p>{{.Content}}</p>
+        {{if .Image}}
+        <img src="{{.Image}}" alt="Sample Photo">
+        {{end}}
+    </section>
+</body>
+
+</html>

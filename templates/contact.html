@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Amit Photography</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    {{template "header" .}}
+
+    <section>
+        <h2>Contact Me</h2>
+        <form method="POST" action="/contact">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        {{if eq . "success"}}
+        <p style="color: green;">Message sent successfully!</p>
+        {{end}}
+    </section>
+
+    {{template "footer" .}}
+</body>
+
+</html>
