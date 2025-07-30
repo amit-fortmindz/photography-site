@@ -9,35 +9,37 @@ import (
 )
 
 func main() {
-	// Serve static files from public/css, public/js, public/images
-	fs := http.FileServer(http.Dir("public"))
-	http.Handle("/public/", http.StripPrefix("/public/", fs))
+	// ✅ Serve static files
+	fs := http.FileServer(http.Dir("public/css"))
+	http.Handle("/css/", http.StripPrefix("/css/", fs))
 
-	// Home page
+	imgFs := http.FileServer(http.Dir("public/images"))
+	http.Handle("/images/", http.StripPrefix("/images/", imgFs))
+
+	jsFs := http.FileServer(http.Dir("public/js"))
+	http.Handle("/js/", http.StripPrefix("/js/", jsFs))
+
+	// ✅ Page routes (AFTER static handlers)
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		renderTemplate(w, "index.html", nil)
 	})
 
-	// About page
 	http.HandleFunc("/about", func(w http.ResponseWriter, r *http.Request) {
 		renderTemplate(w, "about.html", nil)
 	})
 
-	// Services page
 	http.HandleFunc("/services", func(w http.ResponseWriter, r *http.Request) {
 		renderTemplate(w, "services.html", nil)
 	})
 
-	// Gallery page
 	http.HandleFunc("/gallery", func(w http.ResponseWriter, r *http.Request) {
 		photos := []string{
-			"/public/images/photo1.webp",
-			"/public/images/photo2.webp",
+			"./images/photo1.webp",
+			"./images/photo2.webp",
 		}
 		renderTemplate(w, "gallery.html", photos)
 	})
 
-	// Contact page (GET/POST)
 	http.HandleFunc("/contact", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == http.MethodPost {
 			r.ParseForm()
@@ -45,7 +47,6 @@ func main() {
 			email := r.FormValue("email")
 			message := r.FormValue("message")
 
-			// Save submissions to file
 			f, _ := os.OpenFile("submissions.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 			defer f.Close()
 			f.WriteString(fmt.Sprintf("Name: %s, Email: %s, Message: %s\n", name, email, message))
